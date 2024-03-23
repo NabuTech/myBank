@@ -1,0 +1,13 @@
+bin/
+obj/
+*.exe
+*.pdb
+*.dll
+
+.vs/
+*.suo
+*.user
+*.sln.docstates
+
+packages/
+*.nupkg
