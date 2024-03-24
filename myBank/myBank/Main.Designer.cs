@@ -70,6 +70,7 @@
             this.btnManageAccounts.Text = "Accounts";
             this.btnManageAccounts.UseCompatibleTextRendering = true;
             this.btnManageAccounts.UseVisualStyleBackColor = false;
+            this.btnManageAccounts.Click += new System.EventHandler(this.btnManageAccounts_Click);
             // 
             // btnManageCustomers
             // 

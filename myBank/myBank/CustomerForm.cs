@@ -10,22 +10,16 @@ using System.Windows.Forms;
 
 namespace myBank
 {
-    public partial class Main : Form
+    public partial class CustomerForm : Form
     {
-        public Main()
+        public CustomerForm()
         {
             InitializeComponent();
         }
 
-        private void Main_Load(object sender, EventArgs e)
+        private void CustomerForm_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnManageAccounts_Click(object sender, EventArgs e)
-        {
-            ManageAccounts manageAccountsForm = new ManageAccounts();
-            manageAccountsForm.Show();
         }
     }
 }
