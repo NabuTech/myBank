@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace myBank
 {
     public class OmniAccount : Account
     {
-        public OmniAccount(double interestRate = 0.0, decimal overdraftLimit = 0.0m, decimal feeForFailedWithdrawals = 0.0m)
+        
+
+        public OmniAccount(double interestRate = 0.0, decimal overdraftLimit = 100.0m, decimal feeForFailedWithdrawals = 10.0m)
         {
             InterestRate = interestRate;
             OverdraftLimit = overdraftLimit;
@@ -29,8 +27,7 @@ namespace myBank
             }
             else
             {
-                Balance -= FeeForFailedWithdrawals;
-                return false;
+                throw new OverdraftExceededException();
             }
         }
 
@@ -47,6 +44,4 @@ namespace myBank
             return $"Omni Account (ID: {UniqueID}), Balance: {Balance:C}";
         }
     }
-
-
 }
