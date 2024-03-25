@@ -10,7 +10,7 @@ namespace myBank
     {
         public EverydayAccount()
         {
-            // Default in Account Class
+            
         }
 
         public override void Deposit(decimal amount)
@@ -25,7 +25,7 @@ namespace myBank
                 Balance -= amount;
                 return true;
             }
-            return false; // No fees for failed withdrawals for EverydayAccount
+            return false;
         }
 
         public override void CalculateInterest()

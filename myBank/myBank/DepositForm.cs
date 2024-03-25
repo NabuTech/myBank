@@ -21,7 +21,7 @@ namespace myBank
 
         private void DepositForm_Load(object sender, EventArgs e)
         {
-            // Add your event handling code here
+            
         }
 
         private void btnConfirmDeposit_Click(object sender, EventArgs e)

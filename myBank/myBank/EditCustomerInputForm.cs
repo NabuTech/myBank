@@ -18,7 +18,7 @@ namespace myBank
             InitializeComponent();
      
 
-            // Set the text boxes with the customer's current details
+        
             txtCustomerName.Text = customerToEdit.Name;
             txtContactDetails.Text = customerToEdit.ContactDetails;
             EditedCustomer = customerToEdit;
@@ -31,7 +31,7 @@ namespace myBank
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            // Validate input
+           
             if (string.IsNullOrWhiteSpace(txtCustomerName.Text))
             {
                 MessageBox.Show("Please enter a name.");
@@ -44,18 +44,16 @@ namespace myBank
                 return;
             }
 
-            // Update the properties of the existing customer object
+            
             EditedCustomer.Name = txtCustomerName.Text;
             EditedCustomer.ContactDetails = txtContactDetails.Text;
 
-            // Close the form with DialogResult.OK to indicate successful editing
             DialogResult = DialogResult.OK;
             Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            // Close the form without making any changes
             DialogResult = DialogResult.Cancel;
             Close();
         }

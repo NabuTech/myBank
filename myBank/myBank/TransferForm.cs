@@ -30,25 +30,16 @@ namespace myBank
 
         private void TransferForm_Load(object sender, EventArgs e)
         {
-            // Retrieve the accounts associated with the selected customer
             List<Account> accounts = controller.GetAccountsByCustomer(selectedCustomer);
 
-
-            // Clear existing items in the ComboBoxes
             comboAccountWithdraw.Items.Clear();
             comboAccountDeposit.Items.Clear();
 
-            // Iterate over the accounts and add them to the ComboBoxes
             foreach (Account account in accounts)
             {
-                // Add account to the comboAccountWithdraw ComboBox
                 comboAccountWithdraw.Items.Add(account);
-
-                // Add account to the comboAccountDeposit ComboBox
                 comboAccountDeposit.Items.Add(account);
             }
-
-            // Set default selected index for ComboBoxes
             if (comboAccountWithdraw.Items.Count > 0)
                 comboAccountWithdraw.SelectedIndex = 0;
             if (comboAccountDeposit.Items.Count > 0)
@@ -57,11 +48,9 @@ namespace myBank
 
         private void btnConfirmTransfer_Click(object sender, EventArgs e)
         {
-            // Get the selected source and destination accounts
             Account sourceAccount = (Account)comboAccountWithdraw.SelectedItem;
             Account destinationAccount = (Account)comboAccountDeposit.SelectedItem;
 
-            // Validate input
             if (sourceAccount == null || destinationAccount == null)
             {
                 MessageBox.Show("Please select both source and destination accounts.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -80,7 +69,6 @@ namespace myBank
                 return;
             }
 
-            // Perform the transfer
             bool transferSuccessful = controller.TransferFunds(sourceAccount, destinationAccount, transferAmount);
             if (transferSuccessful)
             {

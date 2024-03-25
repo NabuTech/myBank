@@ -23,21 +23,18 @@ namespace myBank
         {
             if (Balance >= amount)
             {
-                // Sufficient funds, deduct the amount
                 Balance -= amount;
-                return true; // Withdrawal successful
+                return true; 
             }
             else
             {
-                // Insufficient funds, handle based on account type
+                
                 if (FeeForFailedWithdrawals > 0)
                 {
-                    // Deduct the withdrawal fee
                     Balance -= FeeForFailedWithdrawals;
                     Console.WriteLine($"Withdrawal fee deducted: {FeeForFailedWithdrawals:C}");
                 }
 
-                // Throw the exception for account type restriction
                 throw new NoOverdraftAllowedException();
             }
         }

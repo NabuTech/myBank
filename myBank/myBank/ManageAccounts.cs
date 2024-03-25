@@ -47,34 +47,32 @@ namespace myBank
             listBoxAccounts.Items.Clear();
             foreach (Account account in controller.GetAccountsByCustomer(customer))
             {
-                listBoxAccounts.Items.Add(account); // Add the Account object directly
+                listBoxAccounts.Items.Add(account);
             }
         }
 
-        public Customer SelectedCustomer
+        public Customer SelectedCustomers
         {
             get { return selectedCustomer; }
             set { selectedCustomer = value; }
         }
         private void btnDeposit_Click(object sender, EventArgs e)
         {
-            // Check if an account is selected
+           
             if (listBoxAccounts.SelectedItem != null)
             {
-                // Get the selected account
+               
                 Account selectedAccount = (Account)listBoxAccounts.SelectedItem;
 
-                // Prompt the user for deposit amount using DepositForm
                 using (var depositForm = new DepositForm())
                 {
                     if (depositForm.ShowDialog() == DialogResult.OK)
                     {
                         decimal depositAmount = depositForm.DepositAmount;
 
-                        // Perform the deposit operation
                         controller.Deposit(selectedAccount.UniqueID, depositAmount);
 
-                        // Update ListBox with accounts to reflect the new balance
+                       
                         UpdateListBoxAccounts(exampleCustomer);
                     }
                 }
@@ -98,7 +96,7 @@ namespace myBank
                             if (selectedAccount.Withdraw(withdrawalAmount))
                             {
                                 MessageBox.Show($"Successfully withdrew {withdrawalAmount:C} from the account.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                UpdateListBoxAccounts(exampleCustomer); // Update the list box with the updated account information
+                                UpdateListBoxAccounts(exampleCustomer); 
                             }
                             else
                             {
