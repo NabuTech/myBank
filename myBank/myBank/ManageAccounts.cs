@@ -27,7 +27,7 @@ namespace myBank
     
         private void ManageAccounts_Load(object sender, EventArgs e)
         {
-            exampleCustomer = new Customer("123456", "John Doe", "0123456789");
+            exampleCustomer = new Customer( "John Doe", "0123456789");
             controller.AddCustomer(exampleCustomer);
 
             controller.CreateAccount(exampleCustomer, AccountType.Everyday);

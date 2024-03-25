@@ -27,5 +27,11 @@ namespace myBank
             ManageAccounts manageAccountsForm = new ManageAccounts();
             manageAccountsForm.Show();
         }
+
+        private void btnManageCustomers_Click(object sender, EventArgs e)
+        {
+            CustomerForm customerForm = new CustomerForm();
+            customerForm.Show();
+        }
     }
 }

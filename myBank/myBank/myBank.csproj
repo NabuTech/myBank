@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="AddCustomerInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCustomerInputForm.Designer.cs">
+      <DependentUpon>AddCustomerInputForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerForm.cs">
@@ -60,6 +66,12 @@
     </Compile>
     <Compile Include="DepositForm.Designer.cs">
       <DependentUpon>DepositForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditCustomerInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCustomerInputForm.Designer.cs">
+      <DependentUpon>EditCustomerInputForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EverydayAccount.cs" />
     <Compile Include="InvestmentClass.cs" />
@@ -90,11 +102,17 @@
     <Compile Include="WithdrawForm.Designer.cs">
       <DependentUpon>WithdrawForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddCustomerInputForm.resx">
+      <DependentUpon>AddCustomerInputForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DepositForm.resx">
       <DependentUpon>DepositForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCustomerInputForm.resx">
+      <DependentUpon>EditCustomerInputForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

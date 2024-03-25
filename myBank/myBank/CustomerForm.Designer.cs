@@ -32,7 +32,7 @@
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
             this.btnEditCustomer = new System.Windows.Forms.Button();
             this.panelCustomers = new System.Windows.Forms.Panel();
-            this.listBoxAccounts = new System.Windows.Forms.ListBox();
+            this.listBoxCustomers = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,6 +65,7 @@
             this.btnDeleteCustomer.Text = "Delete Customer";
             this.btnDeleteCustomer.UseCompatibleTextRendering = true;
             this.btnDeleteCustomer.UseVisualStyleBackColor = false;
+            this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
             // btnEditCustomer
             // 
@@ -79,6 +80,7 @@
             this.btnEditCustomer.Text = "Edit Customer";
             this.btnEditCustomer.UseCompatibleTextRendering = true;
             this.btnEditCustomer.UseVisualStyleBackColor = false;
+            this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
             // 
             // panelCustomers
             // 
@@ -87,13 +89,13 @@
             this.panelCustomers.Size = new System.Drawing.Size(212, 277);
             this.panelCustomers.TabIndex = 15;
             // 
-            // listBoxAccounts
+            // listBoxCustomers
             // 
-            this.listBoxAccounts.FormattingEnabled = true;
-            this.listBoxAccounts.Location = new System.Drawing.Point(16, 153);
-            this.listBoxAccounts.Name = "listBoxAccounts";
-            this.listBoxAccounts.Size = new System.Drawing.Size(243, 277);
-            this.listBoxAccounts.TabIndex = 14;
+            this.listBoxCustomers.FormattingEnabled = true;
+            this.listBoxCustomers.Location = new System.Drawing.Point(16, 153);
+            this.listBoxCustomers.Name = "listBoxCustomers";
+            this.listBoxCustomers.Size = new System.Drawing.Size(243, 277);
+            this.listBoxCustomers.TabIndex = 14;
             // 
             // label2
             // 
@@ -120,6 +122,7 @@
             this.btnAddCustomer.Text = "Add Customer";
             this.btnAddCustomer.UseCompatibleTextRendering = true;
             this.btnAddCustomer.UseVisualStyleBackColor = false;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
             // label1
             // 
@@ -142,7 +145,7 @@
             this.Controls.Add(this.btnDeleteCustomer);
             this.Controls.Add(this.btnEditCustomer);
             this.Controls.Add(this.panelCustomers);
-            this.Controls.Add(this.listBoxAccounts);
+            this.Controls.Add(this.listBoxCustomers);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAddCustomer);
             this.Name = "CustomerForm";
@@ -158,7 +161,7 @@
         private System.Windows.Forms.Button btnDeleteCustomer;
         private System.Windows.Forms.Button btnEditCustomer;
         private System.Windows.Forms.Panel panelCustomers;
-        private System.Windows.Forms.ListBox listBoxAccounts;
+        private System.Windows.Forms.ListBox listBoxCustomers;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAddCustomer;
         private System.Windows.Forms.Label label1;
