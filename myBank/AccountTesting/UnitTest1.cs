@@ -51,20 +51,19 @@ namespace AccountTesting
 
             // Assert
             Assert.That(result, Is.False);
-            Assert.That(account.Balance, Is.EqualTo(initialBalance)); // Balance should remain unchanged
+            Assert.That(account.Balance, Is.EqualTo(initialBalance));
         }
+            [Test]
+            public void Withdraw_WithNegativeAmount_ThrowsArgumentException()
+            {
+                // Arrange
+                var account = new EverydayAccount();
+                decimal initialBalance = 1000;
+                account.Deposit(initialBalance);
+                decimal withdrawalAmount = -100;
 
-        [Test]
-        public void Withdraw_WithNegativeAmount_ThrowsArgumentException()
-        {
-            // Arrange
-            var account = new EverydayAccount();
-            decimal initialBalance = 1000;
-            account.Deposit(initialBalance);
-            decimal withdrawalAmount = -100;
-
-            // Act and Assert
-            Assert.Throws<ArgumentException>(() => account.Withdraw(withdrawalAmount));
+                // Act and Assert
+                Assert.Throws<ArgumentException>(() => account.Withdraw(withdrawalAmount));
+            }
         }
-    }
-}
+    } 
