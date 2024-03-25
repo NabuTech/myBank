@@ -22,6 +22,41 @@ namespace myBank
             customers.Add(customer);
         }
 
+        public List<Customer> GetAllCustomers()
+        {
+            return customers; // Assuming 'customers' is a list containing all customer objects
+        }
+
+        public Customer GetCustomer(int index)
+        {
+            if (index >= 0 && index < customers.Count)
+            {
+                return customers[index];
+            }
+            return null;
+        }
+
+        public void UpdateCustomer(int customerIndex, Customer updatedCustomer)
+        {
+            // Update the customer at the specified index
+            customers[customerIndex] = updatedCustomer;
+            Console.WriteLine($"Customer updated: {updatedCustomer.Name}");
+        }
+
+        public void DeleteCustomer(int index)
+        {
+            if (index >= 0 && index < customers.Count)
+            {
+                customers.RemoveAt(index);
+                Console.WriteLine($"Customer at index {index} deleted successfully.");
+            }
+            else
+            {
+                Console.WriteLine($"Invalid index: {index}. No customer deleted.");
+            }
+        }
+
+
         public void CreateAccount(Customer customer, AccountType accountType, double interestRate = 0, decimal overdraftLimit = 0, decimal feeForFailedWithdrawals = 0)
         {
             Account account;
