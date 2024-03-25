@@ -24,10 +24,11 @@ namespace myBank
             this.Load += ManageAccounts_Load;
         }
 
-    
+
         private void ManageAccounts_Load(object sender, EventArgs e)
         {
-            exampleCustomer = new Customer("123456", "John Doe", "0123456789");
+            exampleCustomer = new Customer(123456, "John Doe", "0123456789");
+
             controller.AddCustomer(exampleCustomer);
 
             controller.CreateAccount(exampleCustomer, AccountType.Everyday);
@@ -36,10 +37,9 @@ namespace myBank
 
             UpdateListBoxAccounts(exampleCustomer);
             selectedCustomer = exampleCustomer;
-            lblUser.Text = $"Welcome,{exampleCustomer.CustomerNumber}, {exampleCustomer.Name}";
-
-           
+            lblUser.Text = $"Welcome, {exampleCustomer.CustomerNumber}, {exampleCustomer.Name}";
         }
+
 
         private void UpdateListBoxAccounts(Customer customer)
         {

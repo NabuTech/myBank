@@ -8,16 +8,15 @@ namespace myBank
 {
     public class Customer
     {
-        public string CustomerNumber { get; set; }
+        public int CustomerNumber { get; set; }
         public string Name { get; set; }
         public string ContactDetails { get; set; }
 
-        public Customer(string customerNumber, string name, string contactDetails)
+        public Customer(int customerNumber, string name, string contactDetails)
         {
             CustomerNumber = customerNumber;
             Name = name;
             ContactDetails = contactDetails;
         }
     }
-
 }

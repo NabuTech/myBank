@@ -22,6 +22,61 @@ namespace myBank
             customers.Add(customer);
         }
 
+        public Customer GetCustomer(int customerNumber)
+        {
+            return customers.FirstOrDefault(c => c.CustomerNumber == customerNumber);
+        }
+
+        public void UpdateCustomer(int customerNumber, Customer updatedCustomer)
+        {
+            Customer customer = customers.FirstOrDefault(c => c.CustomerNumber == customerNumber);
+            if (customer != null)
+            {
+                // Update customer properties
+                customer.Name = updatedCustomer.Name;
+                customer.ContactDetails = updatedCustomer.ContactDetails;
+            }
+            else
+            {
+                throw new ArgumentException("Customer not found.");
+            }
+        }
+
+        public IEnumerable<Customer> GetCustomers()
+        {
+            return customers;
+        }
+
+
+        public void EditCustomer(int customerNumber, string newName, string newContactDetails)
+        {
+            Customer customer = customers.Find(c => c.CustomerNumber == customerNumber);
+            if (customer != null)
+            {
+                customer.Name = newName;
+                customer.ContactDetails = newContactDetails;
+            }
+            else
+            {
+                throw new ArgumentException("Customer not found.");
+            }
+        }
+
+        public void DeleteCustomer(int customerNumber)
+        {
+            Customer customer = customers.Find(c => c.CustomerNumber == customerNumber);
+            if (customer != null)
+            {
+                customers.Remove(customer);
+            }
+            else
+            {
+                throw new ArgumentException("Customer not found.");
+            }
+        }
+
+
+
         public void CreateAccount(Customer customer, AccountType accountType, double interestRate = 0, decimal overdraftLimit = 0, decimal feeForFailedWithdrawals = 0)
         {
             Account account;
