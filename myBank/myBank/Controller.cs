@@ -102,13 +102,26 @@ namespace myBank
             Account account = GetAccountByID(accountID);
             if (account != null)
             {
-                if (account.Withdraw(amount))
+                try
                 {
+                    account.Withdraw(amount);
                     Console.WriteLine($"Withdrawn {amount:C} from account {accountID}. New balance: {account.Balance:C}");
                 }
-                else
+                catch (InsufficientFundsException)
                 {
                     Console.WriteLine($"Insufficient funds in account {accountID}.");
+                }
+                catch (NoOverdraftAllowedException ex)
+                {
+                    Console.WriteLine($"Withdrawal not allowed due to account type restrictions in account {accountID}. Error: {ex.Message}");
+                }
+                catch (OverdraftExceededException)
+                {
+                    Console.WriteLine($"Withdrawal not allowed due to overdraft limit exceeded in account {accountID}.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error occurred while processing withdrawal for account {accountID}: {ex.Message}");
                 }
             }
             else
@@ -116,6 +129,8 @@ namespace myBank
                 Console.WriteLine($"Account with ID {accountID} not found.");
             }
         }
+
+
 
         public void CalculateInterest(int accountID)
         {
