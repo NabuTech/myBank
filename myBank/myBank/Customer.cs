@@ -1,20 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace myBank
 {
-    public partial class Customer : Form
+    public class Customer
     {
-        public Customer()
+        public string CustomerNumber { get; set; }
+        public string Name { get; set; }
+        public string ContactDetails { get; set; }
+
+        public Customer(string customerNumber, string name, string contactDetails)
         {
-            InitializeComponent();
+            CustomerNumber = customerNumber;
+            Name = name;
+            ContactDetails = contactDetails;
         }
     }
+
 }

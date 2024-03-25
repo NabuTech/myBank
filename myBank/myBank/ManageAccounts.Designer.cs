@@ -80,7 +80,7 @@
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.Location = new System.Drawing.Point(23, 91);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(158, 59);
+            this.lblUser.Size = new System.Drawing.Size(443, 59);
             this.lblUser.TabIndex = 6;
             this.lblUser.Text = "Welcome, User";
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -90,7 +90,7 @@
             this.listBoxAccounts.FormattingEnabled = true;
             this.listBoxAccounts.Location = new System.Drawing.Point(19, 153);
             this.listBoxAccounts.Name = "listBoxAccounts";
-            this.listBoxAccounts.Size = new System.Drawing.Size(243, 277);
+            this.listBoxAccounts.Size = new System.Drawing.Size(308, 277);
             this.listBoxAccounts.TabIndex = 7;
             // 
             // panelAccounts
@@ -112,6 +112,7 @@
             this.btnDeposit.Text = "Deposit";
             this.btnDeposit.UseCompatibleTextRendering = true;
             this.btnDeposit.UseVisualStyleBackColor = false;
+            this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
             // 
             // btnWithdraw
             // 
@@ -125,6 +126,7 @@
             this.btnWithdraw.Text = "Withdraw";
             this.btnWithdraw.UseCompatibleTextRendering = true;
             this.btnWithdraw.UseVisualStyleBackColor = false;
+            this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
             // 
             // btnTransfer
             // 
@@ -139,6 +141,7 @@
             this.btnTransfer.Text = "Transfer";
             this.btnTransfer.UseCompatibleTextRendering = true;
             this.btnTransfer.UseVisualStyleBackColor = false;
+            this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
             // 
             // ManageAccounts
             // 
@@ -157,6 +160,7 @@
             this.ForeColor = System.Drawing.Color.DarkBlue;
             this.Name = "ManageAccounts";
             this.Text = "ManageAccounts";
+            this.Load += new System.EventHandler(this.ManageAccounts_Load);
             this.ResumeLayout(false);
 
         }
