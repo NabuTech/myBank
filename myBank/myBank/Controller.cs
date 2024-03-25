@@ -24,7 +24,7 @@ namespace myBank
 
         public List<Customer> GetAllCustomers()
         {
-            return customers; // Assuming 'customers' is a list containing all customer objects
+            return customers; 
         }
 
         public Customer GetCustomer(int index)
@@ -38,7 +38,7 @@ namespace myBank
 
         public void UpdateCustomer(int customerIndex, Customer updatedCustomer)
         {
-            // Update the customer at the specified index
+            
             customers[customerIndex] = updatedCustomer;
             Console.WriteLine($"Customer updated: {updatedCustomer.Name}");
         }
@@ -75,7 +75,7 @@ namespace myBank
                     throw new ArgumentException("Invalid account type.");
             }
 
-            // Associate the account with the customer
+        
             account.Customer = customer;
 
             accounts.Add(account);
@@ -178,28 +178,28 @@ namespace myBank
 
         public bool TransferFunds(Account sourceAccount, Account destinationAccount, decimal transferAmount)
         {
-            // Check if the source account has sufficient balance for the transfer
+
             if (sourceAccount.Balance >= transferAmount)
             {
-                // Withdraw funds from the source account
+                
                 bool withdrawalSuccess = sourceAccount.Withdraw(transferAmount);
 
                 if (withdrawalSuccess)
                 {
-                    // Deposit funds into the destination account
+                    
                     destinationAccount.Deposit(transferAmount);
-                    return true; // Transfer successful
+                    return true; 
                 }
                 else
                 {
-                    // If withdrawal from the source account fails, return false
-                    return false; // Transfer failed
+                    
+                    return false; 
                 }
             }
             else
             {
-                // If the source account does not have sufficient balance, return false
-                return false; // Transfer failed
+                
+                return false; 
             }
         }
 
